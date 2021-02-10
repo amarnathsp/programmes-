@@ -1,0 +1,1829 @@
+
+#include<iostream.h>
+#include<conio.h>
+#include<graphics.h>
+#include<dos.h>
+#include<stdlib.h>
+#include <time.h>
+class boards;
+int gdriver = DETECT,gmode,font,dir=0,si,x;
+
+
+class player
+{
+public:
+int a,b;
+player()
+{
+a=0;
+b=0;
+}
+};
+
+
+class boards
+{
+int xcir,ycir;
+public:
+void board();
+};
+void boards::board()
+{
+	font=6;
+	si=1;
+	settextstyle(font,dir,si);
+	setcolor(4);
+	outtextxy(3,10,"SNAKE AND LADDER");
+	font=10;
+	si=1;
+	settextstyle(font,dir,si);
+	setcolor(2);
+	//row 1
+outtextxy(5,50,"100");
+outtextxy(75,50,"99");
+outtextxy(135,50,"98");
+outtextxy(195,50,"97");
+outtextxy(255,50,"96");
+outtextxy(315,50,"95");
+outtextxy(375,50,"94");
+outtextxy(435,50,"93");
+outtextxy(495,50,"92");
+outtextxy(555,50,"91");
+	//row 2
+outtextxy(5,91,"81");
+outtextxy(75,91,"82");
+outtextxy(135,91,"83");
+outtextxy(195,91,"84");
+outtextxy(255,91,"85");
+outtextxy(315,91,"86");
+outtextxy(375,91,"87");
+outtextxy(435,91,"88");
+outtextxy(495,91,"89");
+outtextxy(555,91,"90");
+	//row 3
+outtextxy(5,132,"80");
+outtextxy(75,132,"79");
+outtextxy(135,132,"78");
+outtextxy(195,132,"77");
+outtextxy(255,132,"76");
+outtextxy(315,132,"75");
+outtextxy(375,132,"74");
+outtextxy(435,132,"73");
+outtextxy(495,132,"72");
+outtextxy(555,132,"71");
+	//row 4
+outtextxy(5,173,"61");
+outtextxy(75,173,"62");
+outtextxy(135,173,"63");
+outtextxy(195,173,"64");
+outtextxy(255,173,"65");
+outtextxy(315,173,"66");
+outtextxy(375,173,"67");
+outtextxy(435,173,"68");
+outtextxy(495,173,"69");
+outtextxy(555,173,"70");
+	//row 5
+outtextxy(5,214,"60");
+outtextxy(75,214,"59");
+outtextxy(135,214,"58");
+outtextxy(195,214,"57");
+outtextxy(255,214,"56");
+outtextxy(315,214,"55");
+outtextxy(375,214,"54");
+outtextxy(435,214,"53");
+outtextxy(495,214,"52");
+outtextxy(555,214,"51");
+	//row 6
+outtextxy(5,255,"41");
+outtextxy(75,255,"42");
+outtextxy(135,255,"43");
+outtextxy(195,255,"44");
+outtextxy(255,255,"45");
+outtextxy(315,255,"46");
+outtextxy(375,255,"47");
+outtextxy(435,255,"48");
+outtextxy(495,255,"49");
+outtextxy(555,255,"50");
+	//row 7
+outtextxy(5,296,"40");
+outtextxy(75,296,"39");
+outtextxy(135,296,"38");
+outtextxy(195,296,"37");
+outtextxy(255,296,"36");
+outtextxy(315,296,"35");
+outtextxy(375,296,"34");
+outtextxy(435,296,"33");
+outtextxy(495,296,"32");
+outtextxy(555,296,"31");
+	//row 8
+outtextxy(5,337,"21");
+outtextxy(75,337,"22");
+outtextxy(135,337,"23");
+outtextxy(195,337,"24");
+outtextxy(255,337,"25");
+outtextxy(315,337,"26");
+outtextxy(375,337,"27");
+outtextxy(435,337,"28");
+outtextxy(495,337,"29");
+outtextxy(555,337,"30");
+	//row 9
+outtextxy(5,378,"20");
+outtextxy(75,378,"19");
+outtextxy(135,378,"18");
+outtextxy(195,378,"17");
+outtextxy(255,378,"16");
+outtextxy(315,378,"15");
+outtextxy(375,378,"14");
+outtextxy(435,378,"13");
+outtextxy(495,378,"12");
+outtextxy(555,378,"11");
+	//row 10
+outtextxy(5,419,"1");
+outtextxy(75,419,"2");
+outtextxy(135,419,"3");
+outtextxy(195,419,"4");
+outtextxy(255,419,"5");
+outtextxy(315,419,"6");
+outtextxy(375,419,"7");
+outtextxy(435,419,"8");
+outtextxy(495,419,"9");
+outtextxy(555,419,"10");
+	// end
+	setcolor(1);
+
+	// column
+	line(3,53,3,460);
+	line(590,53,590,460);
+	//1.
+
+line(58,53,58,460);
+line(120,53,120,460);
+line(183,53,183,460);
+line(243,53,243,460);
+line(303,53,303,460);
+line(361,53,361,460);
+line(421,53,421,460);
+line(481,53,481,460);
+line(541,53,541,460);
+
+	//row
+line(3,53,590,53);
+line(3,460,590,460);
+
+line(3,95,590,95);
+line(3,135,590,135);
+line(3,176,590,176);
+line(3,216,590,216);
+line(3,257,590,257);
+line(3,298,590,298);
+line(3,339,590,339);
+line(3,380,590,380);
+line(3,421,590,421);
+//end
+	//ladder 1
+setcolor(5);
+line(200,430,390,385);
+line(200,432,390,387);
+line(200,450,390,405);
+line(200,452,390,407);
+//step
+line(263,436,260,417);
+line(265,436,262,417);
+line(310,425,306,405);
+line(312,425,308,405);
+line(350,395,355,415);
+line(352,395,356,415);
+//ladder 2
+line(430,375,130,124);
+line(432,375,132,124);
+line(455,360,160,109);
+line(456,360,162,109);
+//step
+line(230,168,210,190);
+line(232,168,212,190);
+line(310,234,290,258);
+line(312,234,292,258);
+line(380,293,362,315);
+line(382,293,364,315);
+//ladder 3
+line(5,120,70,280);
+line(7,120,72,280);
+line(35,120,100,280);
+line(37,120,102,280);
+//step
+line(28,180,57,167);
+line(30,180,59,167);
+line(50,230,78,217);
+line(52,230,80,217);
+//ladder 4
+line(555,150,555,250);
+line(557,150,557,250);
+line(585,150,585,250);
+line(587,150,587,250);
+//step
+line(555,175,585,175);
+line(555,173,585,173);
+line(555,225,585,225);
+line(555,223,585,223);
+//snake 1
+setcolor(4);
+
+ycir=408;
+for(xcir=235;xcir<=385;xcir+=5)
+{
+circle(xcir,ycir,5);
+ycir+=1;
+}
+circle(230,403,10);
+circle(390,440,3);
+//snake 2
+ycir=124;
+for(xcir=415;xcir<=590&&ycir<=441;xcir+=2)
+{
+circle(xcir,ycir,5);
+ycir+=4;
+}
+circle(577,444,3);
+circle(410,119,10);
+//snake 3
+ycir=83;
+for(xcir=110;xcir<=204||ycir<=235;xcir+=3)
+{
+circle(xcir,ycir,5);
+ycir+=5;
+}
+circle(206,241,3);
+circle(108,80,10);
+//snake 4
+ycir=204;
+for(xcir=106;xcir<=150||ycir<=315;xcir+=2)
+{
+circle(xcir,ycir,5);
+ycir+=5;
+}
+circle(152,319,3);
+circle(104,200,10);
+setcolor(15);
+
+}
+
+
+
+class dice
+{
+ int dice;
+public:
+int play_dice(int &);
+};
+
+int dice::play_dice(int &score)
+{
+
+
+
+    srand(time(NULL));
+    dice = rand()%6+1;
+
+if(dice==1)
+outtextxy(180,10,"dice outcome is 1");
+if(dice==2)
+outtextxy(180,10,"dice outcome is 2");
+if(dice==3)
+outtextxy(180,10,"dice outcome is 3");
+if(dice==4)
+outtextxy(180,10,"dice outcome is 4");
+if(dice==5)
+outtextxy(180,10,"dice outcome is 5");
+if(dice==6)
+outtextxy(180,10,"dice outcome is 6");
+
+
+    score = score + dice;
+	switch (score)
+	{
+    case 87:
+	score = 10;
+	break;
+    case 99:
+	score = 57;
+	break;
+    case 62:
+	score = 38;
+	break;
+    case 17:
+	score = 7;
+	break;
+    case 51:
+	score =77;
+	break;
+    case 4:
+	score =14;
+	break;
+    case 28:
+	score =83;
+	break;
+    case 42:
+	score = 81;
+	break;
+
+    }
+    return(score);
+
+}
+
+
+
+
+class game
+{
+public:
+void gamee(boards &z,player &p,dice &e);
+};
+
+void game::gamee(boards &z,player &p,dice &e)
+{
+	//board z;
+	z.board();
+	font=11;
+	si=1;
+	settextstyle(font,dir,si);
+
+//playerssssssssssssss
+
+	font=1;
+	settextstyle(font,dir,si);
+	setcolor(7);
+    while((p.a<=100)&&(p.b<=100))
+	{
+	    if((p.a==0)&&(p.b==0))
+		{
+		outtextxy(600,50,"p");
+	outtextxy(600,75,"l");
+	outtextxy(600,95,"a");
+	outtextxy(600,115,"y");
+	outtextxy(600,135,"e");
+	outtextxy(600,155,"r");
+	outtextxy(600,175,"s");
+	outtextxy(600,255,"a");
+	outtextxy(600,275,"n");
+	outtextxy(600,295,"d");
+	setcolor(6);
+	outtextxy(600,220,"A");
+	outtextxy(600,330,"B");
+	getch();
+	cleardevice();
+	z.board();
+
+		}
+
+	//player b
+	p.b=e.play_dice(p.b);
+
+	if(p.b==1)
+	{
+	outtextxy(38,418,"B");
+	getch();
+	cleardevice();
+	z.board();
+	}
+
+	if(p.b==2)
+	{
+	outtextxy(100,418,"B");
+	getch();
+	cleardevice();
+	z.board();
+	}
+
+	if(p.b==3)
+	{
+	outtextxy(160,418,"B");
+	getch();
+	cleardevice();
+	z.board();
+	}
+	if(p.b==4)
+	{
+	outtextxy(400,378,"B");
+	getch();
+	cleardevice();
+	z.board();
+	}
+	if(p.b==5)
+	{
+	outtextxy(280,418,"B");
+	getch();
+	cleardevice();
+	z.board();
+	}
+	if(p.b==6)
+	{
+	outtextxy(340,418,"B");
+	getch();
+	cleardevice();
+	z.board();
+	}
+	if(p.b==7)
+	{
+	outtextxy(400,418,"B");
+	getch();
+	cleardevice();
+	z.board();
+	}
+	if(p.b==8)
+	{
+	outtextxy(460,418,"B");
+	getch();
+	cleardevice();
+	z.board();
+	}
+	if(p.b==9)
+	{
+	outtextxy(522,418,"B");
+	getch();
+	cleardevice();
+	z.board();
+	}
+	if(p.b==10)
+	{
+	outtextxy(575,418,"B");
+	getch();
+	cleardevice();
+	z.board();
+	}
+	if(p.b==20)
+	{
+	outtextxy(35,378,"B");
+	getch();
+	cleardevice();
+	z.board();
+	}
+	if(p.b==19)
+	{
+	outtextxy(98,378,"B");
+	getch();
+	cleardevice();
+	z.board();
+	}
+	if(p.b==18)
+	{
+	outtextxy(160,378,"B");
+	getch();
+	cleardevice();
+	z.board();
+	}
+	if(p.b==17)
+	{
+	outtextxy(400,418,"B");
+	getch();
+	cleardevice();
+	z.board();
+	}
+	if(p.b==16)
+	{
+	outtextxy(280,378,"B");
+	getch();
+	cleardevice();
+	z.board();
+	}
+	if(p.b==15)
+	{
+	outtextxy(340,378,"B");
+	getch();
+	cleardevice();
+	z.board();
+	}
+	if(p.b==14)
+	{
+	outtextxy(400,378,"B");
+	getch();
+	cleardevice();
+	z.board();
+	}
+	if(p.b==13)
+	{
+	outtextxy(460,378,"B");
+	getch();
+	cleardevice();
+	z.board();
+	}
+	if(p.b==12)
+	{
+	outtextxy(520,378,"B");
+	getch();
+	cleardevice();
+	z.board();
+	}
+	if(p.b==11)
+	{
+	outtextxy(570,378,"B");
+	getch();
+	cleardevice();
+	z.board();
+	}
+	if(p.b==21)
+	{
+	outtextxy(35,337,"B");
+	getch();
+	cleardevice();
+	z.board();
+	}
+	if(p.b==22)
+	{
+	outtextxy(98,337,"B");
+	getch();
+	cleardevice();
+	z.board();
+	}
+	if(p.b==23)
+	{
+	outtextxy(162,337,"B");
+	getch();
+	cleardevice();
+	z.board();
+	}
+	if(p.b==24)
+	{
+	outtextxy(222,337,"B");
+	getch();
+	cleardevice();
+	z.board();
+	}
+	if(p.b==25)
+	{
+	outtextxy(282,337,"B");
+	getch();
+	cleardevice();
+	z.board();
+	}
+	if(p.b==26)
+	{outtextxy(340,337,"B");
+	getch();
+	cleardevice();
+	z.board();
+	}
+	if(p.b==27)
+	{
+	outtextxy(400,337,"B");
+	getch();
+	cleardevice();
+	z.board();
+	}
+	if(p.b==28)
+	{
+	outtextxy(160,91,"B");
+	getch();
+	cleardevice();
+	z.board();
+	}
+	if(p.b==29)
+	{
+	outtextxy(520,337,"B");
+	getch();
+	cleardevice();
+	z.board();
+	}
+	if(p.b==30)
+	{
+	outtextxy(570,337,"B");
+	getch();
+	cleardevice();
+	z.board();
+	}
+	if(p.b==40)
+	{
+	outtextxy(36,296,"B");
+	getch();
+	cleardevice();
+	z.board();
+	}
+if(p.b==39)
+{
+outtextxy(98,296,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==38)
+{
+outtextxy(163,296,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==37)
+{
+outtextxy(222,296,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==36)
+{
+outtextxy(283,296,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==35)
+{
+outtextxy(340,296,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==34)
+{
+outtextxy(400,296,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==33)
+{
+outtextxy(460,296,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==32)
+{
+outtextxy(520,296,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==31)
+{
+outtextxy(570,296,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==41)
+{
+outtextxy(36,255,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==42)
+{
+outtextxy(36,91,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==43)
+{
+outtextxy(160,255,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==44)
+{
+outtextxy(220,255,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==45)
+{
+outtextxy(280,255,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==46)
+{
+outtextxy(340,255,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==47)
+{
+outtextxy(400,255,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==48)
+{
+outtextxy(460,255,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==49)
+{
+outtextxy(520,255,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==50)
+{
+outtextxy(570,255,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==60)
+{
+outtextxy(38,214,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==59)
+{
+outtextxy(100,214,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==58)
+{
+outtextxy(162,214,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==57)
+{
+outtextxy(222,214,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==56)
+{
+outtextxy(282,214,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==55)
+{
+outtextxy(340,214,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==54)
+{
+outtextxy(400,214,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==53)
+{
+outtextxy(460,214,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==52)
+{
+outtextxy(520,214,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==51)
+{
+outtextxy(570,132,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==61)
+{
+outtextxy(36,173,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==62)
+{
+outtextxy(162,296,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==63)
+{
+outtextxy(160,173,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==64)
+{
+outtextxy(220,173,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==65)
+{
+outtextxy(280,173,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==66)
+{
+outtextxy(340,173,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==67)
+{
+outtextxy(400,173,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==68)
+{
+outtextxy(460,173,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==69)
+{
+outtextxy(520,173,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==70)
+{
+outtextxy(570,173,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==80)
+{
+outtextxy(38,132,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==79)
+{
+outtextxy(98,132,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==78)
+{
+outtextxy(162,132,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==77)
+{
+outtextxy(222,132,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==76)
+{
+outtextxy(282,132,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==75)
+{
+outtextxy(340,132,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==74)
+{
+outtextxy(400,132,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==73)
+{
+outtextxy(460,132,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==72)
+{
+outtextxy(520,132,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==71)
+{
+outtextxy(570,132,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==81)
+{
+outtextxy(36,91,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==82)
+{
+outtextxy(98,91,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==83)
+{
+outtextxy(162,91,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==84)
+{
+outtextxy(220,91,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==85)
+{
+outtextxy(280,91,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==86)
+{
+outtextxy(340,91,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==87)
+{
+outtextxy(572,418,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==88)
+{
+outtextxy(460,91,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==89)
+{
+outtextxy(520,91,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==90)
+{
+outtextxy(572,91,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==100)
+{
+outtextxy(37,50,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==99)
+{
+outtextxy(222,214,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==98)
+{
+outtextxy(162,50,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==97)
+{
+outtextxy(222,50,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==96)
+{
+outtextxy(280,50,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==95)
+{
+outtextxy(340,50,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==94)
+{
+outtextxy(400,50,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==93)
+{
+outtextxy(460,50,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==92)
+{
+outtextxy(520,50,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==91)
+{
+outtextxy(570,50,"B");
+getch();
+cleardevice();
+z.board();
+}
+
+// player a
+p.a=e.play_dice(p.a);
+
+if(p.a==1)
+{
+outtextxy(8,418,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==2)
+{
+outtextxy(70,418,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==3)
+{
+outtextxy(130,418,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==4)
+{
+outtextxy(370,378,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==5)
+{
+outtextxy(250,418,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==6)
+{
+outtextxy(310,418,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==7)
+{
+outtextxy(370,418,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==8)
+{
+outtextxy(430,418,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==9)
+{
+outtextxy(492,418,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==10)
+{
+outtextxy(555,418,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==20)
+{
+outtextxy(5,378,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==19)
+{
+outtextxy(68,378,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==18)
+{
+outtextxy(130,378,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==17)
+{
+outtextxy(370,418,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==16)
+{
+outtextxy(250,378,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==15)
+{
+outtextxy(310,378,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==14)
+{
+outtextxy(370,378,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==13)
+{
+outtextxy(430,378,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==12)
+{
+outtextxy(490,378,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==11)
+{
+outtextxy(550,378,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==21)
+{
+outtextxy(5,337,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==22)
+{
+outtextxy(68,337,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==23)
+{
+outtextxy(132,337,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==24)
+{
+outtextxy(192,337,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==25)
+{
+outtextxy(252,337,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==26)
+{outtextxy(310,337,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==27)
+{
+outtextxy(370,337,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==28)
+{
+outtextxy(130,91,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==29)
+{
+outtextxy(490,337,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==30)
+{
+outtextxy(550,337,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==40)
+{
+outtextxy(6,296,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==39)
+{
+outtextxy(68,296,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==38)
+{
+outtextxy(133,296,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==37)
+{
+outtextxy(192,296,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==36)
+{
+outtextxy(253,296,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==35)
+{
+outtextxy(310,296,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==34)
+{
+outtextxy(370,296,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==33)
+{
+outtextxy(430,296,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==32)
+{
+outtextxy(490,296,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==31)
+{
+outtextxy(550,296,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==41)
+{
+outtextxy(6,255,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==42)
+{
+outtextxy(6,91,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==43)
+{
+outtextxy(130,255,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==44)
+{
+outtextxy(190,255,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==45)
+{
+outtextxy(250,255,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==46)
+{
+outtextxy(310,255,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==47)
+{
+outtextxy(370,255,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==48)
+{
+outtextxy(430,255,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==49)
+{
+outtextxy(490,255,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==50)
+{
+outtextxy(550,255,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==60)
+{
+outtextxy(8,214,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==59)
+{
+outtextxy(70,214,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==58)
+{
+outtextxy(132,214,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==57)
+{
+outtextxy(192,214,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==56)
+{
+outtextxy(252,214,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==55)
+{
+outtextxy(310,214,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==54)
+{
+outtextxy(370,214,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==53)
+{
+outtextxy(430,214,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==52)
+{
+outtextxy(490,214,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==51)
+{
+outtextxy(550,132,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==61)
+{
+outtextxy(6,173,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==62)
+{
+outtextxy(132,296,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==63)
+{
+outtextxy(130,173,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==64)
+{
+outtextxy(190,173,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==65)
+{
+outtextxy(250,173,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==66)
+{
+outtextxy(310,173,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==67)
+{
+outtextxy(370,173,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==68)
+{
+outtextxy(430,173,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==69)
+{
+outtextxy(490,173,"B");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==70)
+{
+outtextxy(550,173,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==80)
+{
+outtextxy(8,132,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==79)
+{
+outtextxy(68,132,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==78)
+{
+outtextxy(132,132,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==77)
+{
+outtextxy(192,132,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==76)
+{
+outtextxy(252,132,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==75)
+{
+outtextxy(310,132,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==74)
+{
+outtextxy(370,132,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==73)
+{
+outtextxy(430,132,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==72)
+{
+outtextxy(490,132,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==71)
+{
+outtextxy(550,132,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==81)
+{
+outtextxy(6,91,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==82)
+{
+outtextxy(68,91,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==83)
+{
+outtextxy(132,91,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==84)
+{
+outtextxy(190,91,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==85)
+{
+outtextxy(250,91,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==86)
+{
+outtextxy(310,91,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==87)
+{
+outtextxy(542,418,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==88)
+{
+outtextxy(430,91,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==89)
+{
+outtextxy(490,91,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==90)
+{
+outtextxy(552,91,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==100)
+{
+outtextxy(6,50,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==99)
+{
+outtextxy(192,214,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==98)
+{
+outtextxy(132,50,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.b==97)
+{
+outtextxy(192,50,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==96)
+{
+outtextxy(250,50,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==95)
+{
+outtextxy(310,50,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==94)
+{
+outtextxy(370,50,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==93)
+{
+outtextxy(430,50,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==92)
+{
+outtextxy(490,50,"A");
+getch();
+cleardevice();
+z.board();
+}
+if(p.a==91)
+{
+outtextxy(550,50,"A");
+getch();
+cleardevice();
+z.board();
+}
+
+
+}
+	if(p.a>p.b)
+	  {
+	cleardevice();
+	font=10;
+	si=3;
+	settextstyle(font,dir,si);
+	setcolor(4);
+	outtextxy(50,200,"A WON THE MATCH");
+	  }
+	else
+	  {
+	cleardevice();
+	font=10;
+	si=3;
+	settextstyle(font,dir,si);
+	setcolor(4);
+	outtextxy(50,200,"B WON THE MATCH");
+	  }
+
+
+	getch();
+}
+
+
+
+
+void main()
+{
+initgraph( &gdriver, &gmode, "C:\\TurboC3\\BGI");
+game g;
+boards z;
+dice e;
+player p;
+g.gamee(z,p,e);
+closegraph();
+}
+
+
+
+
+
